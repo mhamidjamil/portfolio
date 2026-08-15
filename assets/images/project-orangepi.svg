@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600" role="img">
+  <rect width="800" height="600" fill="#14100d"/>
+  <circle cx="650" cy="150" r="85" fill="#efb84f" opacity="0.85"/>
+  <text x="80" y="300" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="52" font-weight="600" fill="#f3ede2">Home Automation Hub</text>
+  <rect x="80" y="340" width="70" height="10" rx="5" fill="#efb84f"/>
+  <text x="80" y="408" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="22" font-weight="500" letter-spacing="5" fill="#b6ad9f">IOT &amp; HARDWARE</text>
+</svg>
