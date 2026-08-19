@@ -1,12 +1,14 @@
-# vCard - Personal portfolio
+# M Hamid Jamil - Portfolio
 
-![GitHub repo size](https://img.shields.io/github/repo-size/codewithsadee/vcard-personal-portfolio)
-![GitHub stars](https://img.shields.io/github/stars/codewithsadee/vcard-personal-portfolio?style=social)
-![GitHub forks](https://img.shields.io/github/forks/codewithsadee/vcard-personal-portfolio?style=social)
-[![Twitter Follow](https://img.shields.io/twitter/follow/codewithsadee_?style=social)](https://twitter.com/intent/follow?screen_name=codewithsadee_)
-[![YouTube Video Views](https://img.shields.io/youtube/views/SoxmIlgf2zM?style=social)](https://youtu.be/SoxmIlgf2zM)
+Live at [mhamidjamil.github.io/portfolio](https://mhamidjamil.github.io/portfolio/).
 
-vCard is a fully responsive personal portfolio website, responsive for all devices, built using HTML, CSS, and JavaScript.
+Personal portfolio of an IoT engineer and full-stack developer: school platforms,
+storefronts, mobile apps, and ESP32 firmware. Twelve projects in three shelves
+(web platforms, mobile apps, IoT and hardware), each linked to the live product
+or its source repository.
+
+Built on the MIT-licensed [vCard template](https://github.com/codewithsadee/vcard-personal-portfolio)
+by codewithsadee: plain HTML, CSS, and JavaScript, no build step.
 
 ## Demo
 
