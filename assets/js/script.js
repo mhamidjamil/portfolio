@@ -157,3 +157,57 @@ for (let i = 0; i < navigationLinks.length; i++) {
 
   });
 }
+
+// Contact form: posts to the Pages worker at /api/contact, which pushes the
+// message to ntfy and emails it on when a mail key is configured.
+const contactForm = document.querySelector("[data-form]");
+
+if (contactForm) {
+  const status = document.createElement("p");
+  status.className = "form-status";
+  status.setAttribute("role", "status");
+  status.style.cssText = "margin-top:15px;font-size:var(--fs-6);display:none;";
+  contactForm.appendChild(status);
+
+  const submitBtn = contactForm.querySelector("[data-form-btn]");
+  const label = submitBtn.querySelector("span");
+  const originalLabel = label.textContent;
+
+  const show = (text, ok) => {
+    status.textContent = text;
+    status.style.color = ok ? "hsl(145, 63%, 55%)" : "hsl(0, 63%, 62%)";
+    status.style.display = "block";
+  };
+
+  contactForm.addEventListener("submit", async function (event) {
+    event.preventDefault();
+
+    const data = new FormData(contactForm);
+    submitBtn.setAttribute("disabled", "");
+    label.textContent = "Sending...";
+    status.style.display = "none";
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({
+          name: data.get("fullname"),
+          email: data.get("email"),
+          message: data.get("message"),
+        }),
+      });
+      const result = await response.json();
+      show(result.message, result.status === "success");
+      if (result.status === "success") {
+        contactForm.reset();
+        formInputs.forEach(function (input) { input.value = ""; });
+      }
+    } catch (error) {
+      show("Could not reach the server. Please email admin@innovorix.com instead.", false);
+    } finally {
+      label.textContent = originalLabel;
+      submitBtn.setAttribute("disabled", "");
+    }
+  });
+}

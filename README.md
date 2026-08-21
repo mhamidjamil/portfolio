@@ -7,6 +7,13 @@ storefronts, mobile apps, and ESP32 firmware. Twelve projects in three shelves
 (web platforms, mobile apps, IoT and hardware), each linked to the live product
 or its source repository.
 
+## Contact form
+
+The form posts to `/api/contact`, handled by `_worker.js` on Cloudflare Pages.
+Messages are pushed to ntfy (no key needed, set `NTFY_URL` to change the target)
+and emailed to admin@innovorix.com when `RESEND_API_KEY` and `RESEND_FROM_EMAIL`
+are set in the Pages project's environment variables.
+
 ## Deploys
 
 Pushing to `master` publishes to Cloudflare Pages through
