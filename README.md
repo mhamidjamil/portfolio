@@ -7,6 +7,15 @@ storefronts, mobile apps, and ESP32 firmware. Twelve projects in three shelves
 (web platforms, mobile apps, IoT and hardware), each linked to the live product
 or its source repository.
 
+## Deploys
+
+Pushing to `master` publishes to Cloudflare Pages through
+`.github/workflows/deploy-pages.yml`. It needs two repository secrets:
+`CLOUDFLARE_API_TOKEN` (with **Cloudflare Pages: Edit**) and
+`CLOUDFLARE_ACCOUNT_ID`. Set the repository variable `CLOUDFLARE_PAGES_PROJECT`
+to target a differently named project. Live at
+[portfolio.innovorix.com](https://portfolio.innovorix.com).
+
 Built on the MIT-licensed [vCard template](https://github.com/codewithsadee/vcard-personal-portfolio)
 by codewithsadee: plain HTML, CSS, and JavaScript, no build step.
 
