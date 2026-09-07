@@ -23,3 +23,13 @@ jobs:
           path: dist
           include-hidden-files: true
           retention-days: 7
+      - name: Trigger Cloudflare production build
+        if: github.ref == 'refs/heads/master' && github.event_name != 'pull_request'
+        env:
+          DEPLOY_HOOK: ${{ secrets.CLOUDFLARE_DEPLOY_HOOK }}
+        run: |
+          if [ -z "$DEPLOY_HOOK" ]; then
+            echo '::error::CLOUDFLARE_DEPLOY_HOOK is missing; nothing was deployed.'
+            exit 1
+          fi
+          curl --fail --silent --show-error --max-time 30 --request POST "$DEPLOY_HOOK" | jq -e '.success == true'

@@ -38,13 +38,16 @@ other repositories automatically. Agents must perform the content update.
 
 Cloudflare Pages project `portfolio` builds `master` with
 `node scripts/build.mjs`, output `dist`, at `portfolio.innovorix.com`.
-GitHub Actions runs the same validation and stores a build artifact; Cloudflare
-performs deployment through its existing GitHub integration. No token-based
-second deploy workflow. A successful validation job alone is not a deploy.
+GitHub Actions runs the same validation and stores a build artifact, then calls
+the project-scoped `CLOUDFLARE_DEPLOY_HOOK` secret on production pushes only.
+Cloudflare fetches `master`, builds and deploys it. No account-wide token is
+required. A successful hook response means accepted, not deployment complete.
 After an authorised push, check Cloudflare's deployment and the live pages.
 Keep Cloudflare's build watch `path_includes` set to `["*"]`. An empty list
 matches no changed files and silently skips push-triggered deployments. This
 misconfiguration was corrected during the September 2026 showcase publication.
+Push events still did not arrive after that fix, so the explicit hook is the
+verified deployment trigger. Keep secrets out of the repository and build output.
 
 Review at desktop and 390px widths, including search, category filtering,
 keyboard navigation and project links. Bump `version.json` once per batch.

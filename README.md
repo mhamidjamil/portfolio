@@ -30,9 +30,10 @@ branch **master**. Its build command is `node scripts/build.mjs` and output
 directory is `dist`. An authorised push triggers deployment to
 [portfolio.innovorix.com](https://portfolio.innovorix.com).
 
-GitHub Actions builds and validates the same artifact. It does not deploy a
-second copy and needs no Cloudflare credentials. Check Cloudflare's actual
-deployment and live routes before reporting publication.
+GitHub Actions builds and validates the artifact, then calls the project-scoped
+`CLOUDFLARE_DEPLOY_HOOK` secret for production pushes. Cloudflare fetches the
+repository and performs the deployment. A missing hook fails the workflow.
+Check Cloudflare's actual deployment and live routes before reporting publication.
 
 The older GitHub Pages URL is a separate surface. Links from the original
 personal page point at the Cloudflare domain for generated case studies.

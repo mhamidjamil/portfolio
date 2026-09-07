@@ -1,12 +1,18 @@
-# Validation here, deployment through Cloudflare
+# Validate here, trigger the Cloudflare build
 
-`showcase.yml` runs `node scripts/build.mjs` to validate the content and create
-the `dist` artifact. Cloudflare runs the same build command and publishes `dist`
-through its existing GitHub integration. GitHub validation is not a deployment.
+`showcase.yml` runs `node scripts/build.mjs`, saves the `dist` artifact, and on
+production pushes calls the project-scoped `CLOUDFLARE_DEPLOY_HOOK` secret.
+Cloudflare fetches master, runs the same command and publishes `dist`. A missing
+secret is an error. Pull requests validate only and never trigger production.
+
+September 2026: the existing source connection could clone and build the
+repository but did not receive pushes, even after repairing an empty build-watch
+list. The explicit hook provides the automatic publishing path. Verify the live
+deployment; successful validation or hook acceptance alone does not prove it.
 
 Cloudflare Pages builds this repository itself: the `portfolio` project is
-connected to `mhamidjamil/portfolio` on `master`, so pushing is the whole
-deploy and `portfolio.innovorix.com` follows within a minute.
+connected to `mhamidjamil/portfolio` on `master`. The validated workflow triggers
+that build through the hook and `portfolio.innovorix.com` follows after it passes.
 
 There used to be a "Deploy to Cloudflare Pages" workflow here. It checked for
 `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID`, and when they were missing
