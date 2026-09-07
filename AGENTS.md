@@ -42,6 +42,9 @@ GitHub Actions runs the same validation and stores a build artifact; Cloudflare
 performs deployment through its existing GitHub integration. No token-based
 second deploy workflow. A successful validation job alone is not a deploy.
 After an authorised push, check Cloudflare's deployment and the live pages.
+Keep Cloudflare's build watch `path_includes` set to `["*"]`. An empty list
+matches no changed files and silently skips push-triggered deployments. This
+misconfiguration was corrected during the September 2026 showcase publication.
 
 Review at desktop and 390px widths, including search, category filtering,
 keyboard navigation and project links. Bump `version.json` once per batch.
