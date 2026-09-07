@@ -1,0 +1,25 @@
+name: Validate portfolio showcase
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Build and validate every case study
+        run: node scripts/build.mjs
+      - uses: actions/upload-artifact@v4
+        with:
+          name: portfolio-showcase
+          path: dist
+          include-hidden-files: true
+          retention-days: 7

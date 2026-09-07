@@ -1,0 +1,141 @@
+[
+  {
+    "slug": "wraptopia", "name": "Wrap Topia", "category": "Commerce", "eyebrow": "Restaurant operations", "accent": "#ff9259", "image": "wrap-topia.jpg",
+    "summary": "From a customised wrap to the kitchen, the rider and the day's accounts.",
+    "problem": "A restaurant order crosses several hands. Telephone orders, walk-ins and online purchases need the same menu, pricing and progress, without staff copying details between systems.",
+    "solution": "I built the ordering website and operational tools around one Rails backend: customers customise meals, the kitchen works a live board, counter staff enter orders, riders manage delivery and the owner manages the shop.",
+    "features": ["Menu customisation, bundles, deals, delivery zones and pickup checkout", "Live order tracking, kitchen board, counter orders and rider views", "Owner controls for menus, opening hours, staff and sales reporting", "WhatsApp order updates and customer sign-in codes"],
+    "engineering": "Pricing and order rules live on the server. The current repository also contains a Flutter mobile client using the same backend, following the earlier Hotwire Native Android implementation.",
+    "stack": ["Ruby on Rails", "Hotwire", "PostgreSQL", "Flutter", "Dart"], "flow": ["Customer order", "Kitchen board", "Pickup or rider", "Sales reporting"],
+    "links": [{"label": "Visit Wrap Topia", "url": "https://wraptopia.innovorix.com"}], "related": ["baileys", "dolphinpk"], "reviewed": "2026-09-07"
+  },
+  {
+    "slug": "innovorix", "name": "Innovorix", "category": "Platforms", "eyebrow": "Institute management", "accent": "#80aaff", "image": "innovorix.jpg",
+    "summary": "The daily work of an institute, connected from admissions to guardian updates.",
+    "problem": "Student records, fee collection, attendance and examinations become difficult to follow when each department maintains its own disconnected records.",
+    "solution": "I built Innovorix, previously called Academia, to bring these workflows into one platform with dedicated views for administrators, teachers, students, guardians, accountants and librarians.",
+    "features": ["Admissions, student records, attendance and timetable management", "Fee challans, online payments, receipts and reminders", "Examinations, grading, merit lists and printable report cards", "Role-based portals and communication with families"],
+    "engineering": "A multi-institute application built with Next.js, TypeScript, Prisma and PostgreSQL. Background jobs support work such as notifications, while access is scoped to the institute and the person's role.",
+    "stack": ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "Redis"], "flow": ["Admission", "Academic records", "Fees and exams", "Guardian updates"],
+    "links": [{"label": "Explore Innovorix", "url": "https://innovorix.com"}], "related": ["baileys", "spotwire"], "reviewed": "2026-09-07"
+  },
+  {
+    "slug": "spotwire", "name": "Spotwire", "category": "Mobile", "eyebrow": "Arrival alerts and workspaces", "accent": "#ffb36d", "image": "spotwire.jpg",
+    "summary": "Know they arrived. Understand the day. Keep a workspace in sync.",
+    "problem": "People waiting for an arrival need a useful update, while organisations need a clear attendance view. Repeated messages and unreliable background detection make both frustrating.",
+    "solution": "Spotwire, formerly TextGate, now combines saved-place arrival alerts, visit timelines, linked-account sharing and workspace attendance. Its home screen adapts to the member's role and selected workspace.",
+    "features": ["Arrival alerts over WhatsApp, in-app notifications and SMS to Pakistani numbers", "Visit timelines, linked accounts and separately controlled location sharing", "Workspace attendance, member views and administrative controls", "Quiet hours and workspace sound modes, with one alert per visit"],
+    "engineering": "Android geofences are authoritative for places with coordinates; saved WiFi provides supporting evidence. The Kotlin and Jetpack Compose client connects to Firebase. SMS jobs reach my shared ESP32 gateway, so users do not need to buy hardware.",
+    "stack": ["Kotlin", "Jetpack Compose", "Firebase", "Android geofencing", "ESP32"], "flow": ["Saved place", "Arrival detected", "Delivery route", "Contact notified"],
+    "links": [{"label": "Get it on Google Play", "url": "https://play.google.com/store/apps/details?id=com.spotwire.app"}, {"label": "View source", "url": "https://github.com/mhamidjamil/ttgo-sms-app"}], "related": ["ttgo-tcall", "baileys"], "reviewed": "2026-09-07"
+  },
+  {
+    "slug": "paksehat", "name": "PakSehat", "category": "Mobile", "eyebrow": "Home healthcare", "accent": "#8ee0be", "image": "paksehat.jpg",
+    "summary": "A home visit, from choosing a service to following its progress.",
+    "problem": "A home-healthcare provider needs patients, doctors and staff to share the same booking details, charges and visit status.",
+    "solution": "I built a Flutter application for a healthcare provider's patients and team. Patients choose a doctor and services, schedule a home visit and follow its progress; doctors and staff manage their side in the same application.",
+    "features": ["Doctor selection, multiple services and scheduled home visits", "Live booking status and direct patient-doctor chat", "Service packages, itemised charges and booking history", "Cash or direct-transfer payments and staff management"],
+    "engineering": "Flutter and Firebase power the mobile experience, with Firestore updates and push notifications for bookings and messages. It serves a healthcare company's own team, rather than an open marketplace of unrelated providers.",
+    "stack": ["Flutter", "Dart", "Firebase Auth", "Cloud Firestore", "Firebase Messaging"], "flow": ["Choose services", "Book a visit", "Team responds", "Visit completed"],
+    "links": [{"label": "Get it on Google Play", "url": "https://play.google.com/store/apps/details?id=com.paksehat.app"}], "related": ["spotwire"], "reviewed": "2026-09-07"
+  },
+  {
+    "slug": "dolphinpk", "name": "DolphinPK", "category": "Commerce", "eyebrow": "Dolphin Foods storefront", "accent": "#76d9d0", "image": "dolphin-foods.jpg",
+    "summary": "A seafood storefront built around local payment and fulfilment workflows.",
+    "problem": "A frozen-food business needs an online catalogue and a dependable order process, including cash on delivery and transfers that staff can verify.",
+    "solution": "I built Dolphin Foods' storefront and back office, connecting product browsing, checkout, customer accounts, payment review and order management.",
+    "features": ["Product catalogue, categories, deals, cart and checkout", "Cash on delivery and payment-proof uploads for direct transfers", "Stock changes tied to confirmation, with restoration on cancellation", "Staff permissions, activity records and sales dashboards"],
+    "engineering": "Rails, Hotwire and PostgreSQL keep the storefront and staff tools together. Payment verification and stock updates share a transaction so the order and inventory cannot disagree halfway through confirmation.",
+    "stack": ["Ruby on Rails", "Hotwire", "PostgreSQL", "Tailwind CSS"], "flow": ["Browse seafood", "Place order", "Confirm payment", "Fulfil order"],
+    "links": [{"label": "Visit Dolphin Foods", "url": "https://www.dolphinpk.com"}], "related": ["wraptopia", "lilibetlondon"], "reviewed": "2026-09-07"
+  },
+  {
+    "slug": "lilibetlondon", "name": "Lilibet London", "category": "Commerce", "eyebrow": "Fashion catalogue and atelier", "accent": "#e1d5bf", "image": "lilibet-london.jpg",
+    "summary": "A monochrome fashion experience with a practical back office.",
+    "problem": "A fashion catalogue needs a distinctive visual identity, but its team also needs a straightforward way to manage products, customer enquiries and site activity.",
+    "solution": "I built a black-and-white storefront for clothing, bags, wallets and accessories, together with the Atelier administration area.",
+    "features": ["Category-led product browsing and a consistent monochrome identity", "Subtle motion with support for reduced-motion preferences", "Atelier tools for catalogue management and customer enquiries", "Visitor reporting that filters bot traffic"],
+    "engineering": "Rails and Hotwire serve the experience with Tailwind styling, PostgreSQL persistence and a Kamal deployment setup. The same application supports the public catalogue and the team's administration tools.",
+    "stack": ["Ruby on Rails", "Hotwire", "Tailwind CSS", "PostgreSQL", "Kamal"], "flow": ["Browse collection", "Explore product", "Send enquiry", "Atelier responds"],
+    "links": [{"label": "Visit Lilibet London", "url": "https://lilibetlondon.pk"}], "related": ["dolphinpk", "wraptopia"], "reviewed": "2026-09-07"
+  },
+  {
+    "slug": "baileys", "name": "Baileys WhatsApp Gateway", "category": "Platforms", "eyebrow": "Shared messaging infrastructure", "accent": "#a9df86", "image": "whatsapp-gateway.jpg",
+    "summary": "One messaging service behind multiple applications.",
+    "problem": "Each product needs messaging, but separately rebuilding number linking, sessions, delivery queues and retries multiplies the maintenance work.",
+    "solution": "I built a self-hosted, multi-tenant gateway on the open-source Baileys library. Accounts link WhatsApp numbers and applications send through a shared interface with their own credentials.",
+    "features": ["QR-based number linking and persistent sessions", "Per-application credentials and independent key rotation", "Durable message records, delivery queues and priorities", "A dashboard for sessions, delivery activity and paced campaigns"],
+    "engineering": "Fastify handles requests, Redis supports the queue and PostgreSQL records state. This is my gateway built using Baileys, not a claim of authorship of the upstream library or an official Meta messaging service. It connects projects including Innovorix, Spotwire and Wrap Topia.",
+    "stack": ["Node.js", "TypeScript", "Fastify", "Baileys", "PostgreSQL", "Redis"], "flow": ["Application", "Gateway", "Delivery queue", "WhatsApp"],
+    "links": [{"label": "Baileys upstream library", "url": "https://github.com/WhiskeySockets/Baileys"}], "related": ["innovorix", "spotwire", "wraptopia"], "reviewed": "2026-09-07"
+  },
+  {
+    "slug": "ahmedsales", "name": "AhmedSales OS", "category": "Platforms", "eyebrow": "Agency operations", "accent": "#b5a0ff", "image": "ahmedsales.jpg",
+    "summary": "Connect the work of winning, delivering and billing a project.",
+    "problem": "Agency teams lose context when sales, delivery, invoicing and client updates sit in unrelated tools.",
+    "solution": "I built an agency workspace that connects the sales pipeline, delivery work, invoicing and client communication.",
+    "features": ["Sales pipeline and project delivery workflows", "Invoicing and client-facing updates", "Workspace roles and per-person permissions", "Connections for each agency's communication and payment tools"],
+    "engineering": "A React and Express application with typed contracts, Drizzle, PostgreSQL and Clerk. Workspace scoping connects the modules while separating each agency's records.",
+    "stack": ["React", "Express", "TypeScript", "Drizzle", "PostgreSQL", "Clerk"], "flow": ["Lead", "Project", "Delivery", "Invoice"], "links": [], "related": ["innovorix", "baileys"], "reviewed": "2026-09-07"
+  },
+  {
+    "slug": "ttgo-tcall", "name": "GSM SMS Gateway", "category": "Hardware", "eyebrow": "ESP32 and SIM800", "accent": "#b9d978", "image": "project-ttgo-tcall.svg",
+    "summary": "Cloud jobs become messages through a physical SIM card.",
+    "problem": "Software needs a bridge to a cellular modem to send and receive SMS using a physical SIM.",
+    "solution": "I built firmware for a LilyGO TTGO T-Call, connecting an ESP32 and SIM800 modem to a Firestore job queue.",
+    "features": ["Two-way SMS and call handling", "Cloud job processing and device status", "On-device web dashboard and push alerts", "Telemetry and controlled message pacing"],
+    "engineering": "The firmware and Spotwire share a queue contract. Spotwire creates jobs; the board reads pending work and performs the cellular operation. My shared gateway serves the application's Pakistani SMS route.",
+    "stack": ["C++", "ESP32", "SIM800", "Arduino", "Firestore"], "flow": ["Cloud job", "ESP32", "SIM800 modem", "Recipient phone"],
+    "links": [{"label": "Explore the firmware", "url": "https://github.com/mhamidjamil/TTGO_TCall"}], "related": ["spotwire", "orangepi"], "reviewed": "2026-09-07"
+  },
+  {
+    "slug": "orangepi", "name": "Orange Pi Automation Hub", "category": "Hardware", "eyebrow": "Single-board computing", "accent": "#ffbf78", "image": "project-orangepi.svg",
+    "summary": "An always-on bridge between devices, telemetry and a web console.",
+    "problem": "Hardware projects need somewhere to inspect serial traffic, collect measurements and run the small scheduled tasks that keep everything useful.",
+    "solution": "I built an automation hub around an Orange Pi 5 Plus, including a serial bridge to the TTGO board and a Flask console.",
+    "features": ["Live serial console for the connected ESP32 board", "InfluxDB telemetry collection", "Push alerts and email integration", "Scheduled automation scripts"],
+    "engineering": "Python services turn a single-board computer into the operational companion to the embedded device, with a browser interface for inspecting what the hardware is doing.",
+    "stack": ["Python", "Orange Pi", "Flask", "InfluxDB", "Linux"], "flow": ["Connected device", "Serial bridge", "Telemetry", "Web console"],
+    "links": [{"label": "Explore the source", "url": "https://github.com/mhamidjamil/orangepi"}], "related": ["ttgo-tcall", "esp32-keyboard"], "reviewed": "2026-09-07"
+  },
+  {
+    "slug": "door-monitoring", "name": "Door Monitoring", "category": "Hardware", "eyebrow": "Connected access prototype", "accent": "#85c7ee", "image": "project-door-monitoring.svg",
+    "summary": "A physical door lock with wireless control and opening alerts.",
+    "problem": "A door needs both a way to control its lock and a way to report that it opened while monitoring is active.",
+    "solution": "I combined door sensing, a servo-operated lock and wireless control into an embedded prototype.",
+    "features": ["Servo-controlled locking", "Wireless control from a phone", "Door-open sensing", "Notifications while monitoring is enabled"],
+    "engineering": "This project brings sensing, actuation and wireless communication together. It is presented as a hardware prototype, without claims of certified access-control security.",
+    "stack": ["C++", "Embedded sensors", "Servo control", "WiFi", "Bluetooth"], "flow": ["Door sensor", "Controller", "Lock or alert"],
+    "links": [{"label": "Explore the source", "url": "https://github.com/mhamidjamil/Door-Monitoring"}], "related": ["watcher", "water-sensor"], "reviewed": "2026-09-07"
+  },
+  {
+    "slug": "watcher", "name": "Watcher", "category": "Hardware", "eyebrow": "Ultrasonic movement detection", "accent": "#dda4ee", "image": "project-watcher.svg",
+    "summary": "Detect changes in the surroundings with distance sensors.",
+    "problem": "A compact embedded system needs to notice movement without relying on a video stream or a full computer-vision stack.",
+    "solution": "I built a sensor-based monitoring project that observes changes in its surroundings and signals when movement is detected.",
+    "features": ["Ultrasonic distance sensing", "Scanning and baseline comparison", "Movement detection", "Radio-based alerts"],
+    "engineering": "Embedded C++ coordinates distance measurements and movement signalling. Detection comes from physical sensors and comparison with the surroundings, with radio communication carrying the alert.",
+    "stack": ["C++", "Ultrasonic sensors", "Servo", "Radio"], "flow": ["Scan surroundings", "Compare distances", "Signal movement"],
+    "links": [{"label": "Explore the source", "url": "https://github.com/mhamidjamil/Watcher"}], "related": ["door-monitoring", "water-sensor"], "reviewed": "2026-09-07"
+  },
+  {
+    "slug": "water-sensor", "name": "Water Leak Detector", "category": "Hardware", "eyebrow": "Low-power sensing", "accent": "#89cafa", "image": "project-water-sensor.svg",
+    "summary": "Wake when water is detected, then alert the phone.",
+    "problem": "A leak detector should spend most of its time waiting efficiently and notify someone when water reaches the sensor.",
+    "solution": "I built an ESP32 device that uses a simple water-sensing connection to wake from deep sleep and send an alert.",
+    "features": ["Simple conductive water sensing", "ESP32 deep-sleep operation", "Wake-triggered detection", "Phone notifications"],
+    "engineering": "The project explores an event-driven, low-power device: the sensor determines when the processor needs to wake and communicate.",
+    "stack": ["ESP32", "C++", "Deep sleep", "WiFi"], "flow": ["Water detected", "Wake ESP32", "Send notification"],
+    "links": [{"label": "Explore the source", "url": "https://github.com/mhamidjamil/esp32_for_water_sensor"}], "related": ["door-monitoring", "orangepi"], "reviewed": "2026-09-07"
+  },
+  {
+    "slug": "esp32-keyboard", "name": "Remote USB Keyboard", "category": "Hardware", "eyebrow": "ESP32-S3 human interface device", "accent": "#c4b1fb", "image": "project-usb-keyboard.svg",
+    "summary": "Type on a connected computer from a phone or browser.",
+    "problem": "A computer that accepts a USB keyboard can be controlled from another device if wireless input is translated into ordinary keystrokes.",
+    "solution": "I built ESP32-S3 firmware that presents itself as a USB keyboard and receives input over WiFi or Bluetooth Low Energy.",
+    "features": ["Standard USB keyboard interface", "Text entry from a phone or browser", "WiFi and Bluetooth Low Energy input", "Embedded control without a desktop companion application"],
+    "engineering": "The ESP32-S3 bridges wireless commands to USB human-interface-device reports. It is an exploration of embedded interfaces for computers I control.",
+    "stack": ["ESP32-S3", "C++", "USB HID", "WiFi", "Bluetooth LE"], "flow": ["Phone or browser", "Wireless input", "ESP32-S3", "USB keyboard"],
+    "links": [{"label": "Explore the firmware", "url": "https://github.com/mhamidjamil/ESP32-S3_work"}], "related": ["orangepi", "ttgo-tcall"], "reviewed": "2026-09-07"
+  }
+]

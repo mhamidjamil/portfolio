@@ -1,4 +1,8 @@
-# No deploy workflow here, on purpose
+# Validation here, deployment through Cloudflare
+
+`showcase.yml` runs `node scripts/build.mjs` to validate the content and create
+the `dist` artifact. Cloudflare runs the same build command and publishes `dist`
+through its existing GitHub integration. GitHub validation is not a deployment.
 
 Cloudflare Pages builds this repository itself: the `portfolio` project is
 connected to `mhamidjamil/portfolio` on `master`, so pushing is the whole

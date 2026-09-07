@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="440" viewBox="0 0 1200 440" role="img" aria-labelledby="title desc">
+<title id="title">M Hamid Jamil. From the screen to the circuit.</title><desc id="desc">Software engineer building web platforms, mobile applications and connected hardware in Lahore, Pakistan.</desc>
+<defs><pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="#35412e"/></pattern></defs>
+<rect width="1200" height="440" rx="18" fill="#111511"/><path d="M0 0h1200v440H0z" fill="url(#dots)"/>
+<rect width="6" height="440" fill="#c1e98a"/><text x="58" y="66" fill="#c1e98a" font-family="monospace" font-size="13" letter-spacing="3">SOFTWARE · MOBILE · CONNECTED HARDWARE</text>
+<text x="55" y="153" fill="#f0f2e9" font-family="Arial,sans-serif" font-weight="700" font-size="59" letter-spacing="-2">M Hamid Jamil<tspan fill="#c1e98a">.</tspan></text>
+<text x="58" y="211" fill="#dbe5d2" font-family="Arial,sans-serif" font-size="29">From the screen to the circuit.</text>
+<text x="58" y="256" fill="#a7b39f" font-family="Arial,sans-serif" font-size="18">I build the interface, the services, and the systems behind them.</text>
+<path d="M58 299H747" stroke="#34412e"/>
+<text x="58" y="337" fill="#c1e98a" font-family="monospace" font-size="13">WEB PLATFORMS</text><text x="260" y="337" fill="#c1e98a" font-family="monospace" font-size="13">MOBILE APPS</text><text x="435" y="337" fill="#c1e98a" font-family="monospace" font-size="13">CLOUD SYSTEMS</text><text x="638" y="337" fill="#c1e98a" font-family="monospace" font-size="13">HARDWARE</text>
+<text x="58" y="390" fill="#a7b39f" font-family="monospace" font-size="12" letter-spacing="1">LAHORE, PAKISTAN / SELECTED WORK</text>
+<g transform="translate(976 220)"><ellipse rx="159" ry="99" fill="none" stroke="#526244" transform="rotate(-30)"/><ellipse rx="109" ry="155" fill="none" stroke="#526244" transform="rotate(25)"/><rect x="-55" y="-55" width="110" height="110" rx="28" fill="#202c1b" stroke="#91ad70"/><text x="-36" y="17" font-family="Arial,sans-serif" font-size="50" font-weight="700" fill="#edf3e5">HJ<tspan fill="#c1e98a">.</tspan></text><g fill="#c1e98a"><circle cx="-133" cy="-10" r="6"/><circle cx="66" cy="-122" r="6"/><circle cx="112" cy="59" r="6"/><circle cx="-62" cy="117" r="6"/></g></g></svg>
