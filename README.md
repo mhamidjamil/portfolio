@@ -3,7 +3,7 @@
 [Personal portfolio](https://portfolio.innovorix.com) · [Selected work](https://portfolio.innovorix.com/work)
 
 Web platforms, mobile applications and connected hardware. The work gallery
-links to 14 case studies covering context, features, engineering and related
+links to 15 case studies covering context, features, engineering and related
 projects. The original personal page remains at `index.html`.
 
 ## Content and local build

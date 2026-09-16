@@ -1,5 +1,15 @@
 [
   {
+    "slug": "gemanstore", "name": "GEMAN", "category": "Commerce", "eyebrow": "Wearables, audio and charging", "accent": "#ff7a29", "image": "gemanstore.jpg",
+    "summary": "A product-first store for earbuds, smart watches and chargers in Pakistan, and the back office that runs it.",
+    "problem": "GEMAN sells smart wearables, earbuds, headphones, smart watches, chargers, cables and power banks in Pakistan. The brief was to match the range of an established local competitor and beat it on speed and design, with a back office that lets the team run products, orders and content themselves.",
+    "solution": "I built the storefront and its back office as one Rails application. Shoppers get a product-first store in a light or dark theme, admins run the catalogue, orders and promotions, and the super admin runs staff, content and store settings. The live store starts empty for staff to fill with real products, while a separate demo server carries a full sample catalogue.",
+    "features": ["Thirteen categories, search and filters, and product pages with colours, specifications, reviews and WhatsApp contact", "Checkout with cash on delivery, or payment in advance by EasyPaisa, JazzCash or bank transfer into accounts the staff manage", "Coupons, order tracking by number, wishlists, privacy, refund and terms pages, and accounts with optional two-step verification through an authenticator app", "An admin panel for products with prices typed in rupees, categories, orders moving through a status flow, coupons, banners, review moderation, the inbox and subscribers", "Photo tools for staff right on the product page: upload, choose the main photograph or remove one", "A super admin area for staff accounts, content pages, a traffic log and store settings such as contact details, delivery charges and the standard warranty", "Staff accounts kept out of shopping, so test orders never mix with real ones"],
+    "engineering": "Rails 8.1, Hotwire and Tailwind CSS v4 run on PostgreSQL 16, with Solid Queue, Solid Cache and Solid Cable in the same database. Until real photographs arrive, each product carries generated artwork: an SVG drawn from its category's colour and silhouette, rendered by libvips into an ordinary attachment staff can replace. The earlier dark design is still served by the same application under /old, by moving that prefix onto SCRIPT_NAME so every route and link works beneath it unchanged. Search engines get canonical host redirects, Open Graph share images, Organization, Store, Product and Breadcrumb structured data, a sitemap and robots rules. The live store and the demo run from one checkout with their own databases and image stores. Puma runs under pm2 behind a Cloudflare Tunnel, deploys are pulled and fast-forward only, Datadog receives errors and business events, and the version number in the footer counts up with every shipped commit.",
+    "stack": ["Ruby on Rails", "Hotwire", "Tailwind CSS", "PostgreSQL", "libvips", "Cloudflare", "Datadog"], "flow": ["Browse and search", "Bag and checkout", "Staff move the order", "Track by number"],
+    "links": [{"label": "Visit the store", "url": "https://www.gemanstore.com"}, {"label": "Explore the demo catalogue", "url": "https://dev.gemanstore.com"}, {"label": "See the earlier design", "url": "https://www.gemanstore.com/old"}], "related": ["dolphinpk", "lilibetlondon", "wraptopia"], "reviewed": "2026-09-17"
+  },
+  {
     "slug": "wraptopia", "name": "Wrap Topia", "category": "Commerce", "eyebrow": "Restaurant operations", "accent": "#ff9259", "image": "wrap-topia.jpg",
     "summary": "From a customised wrap to the kitchen, the rider and the day's accounts.",
     "problem": "A restaurant order crosses several hands. Telephone orders, walk-ins and online purchases need the same menu, pricing and progress, without staff copying details between systems.",
@@ -47,7 +57,7 @@
     "features": ["Product catalogue, categories, deals, cart and checkout", "Cash on delivery and payment-proof uploads for direct transfers", "Stock changes tied to confirmation, with restoration on cancellation", "Staff permissions, activity records and sales dashboards"],
     "engineering": "Rails, Hotwire and PostgreSQL keep the storefront and staff tools together. Payment verification and stock updates share a transaction so the order and inventory cannot disagree halfway through confirmation.",
     "stack": ["Ruby on Rails", "Hotwire", "PostgreSQL", "Tailwind CSS"], "flow": ["Browse seafood", "Place order", "Confirm payment", "Fulfil order"],
-    "links": [{"label": "Visit Dolphin Foods", "url": "https://www.dolphinpk.com"}], "related": ["wraptopia", "lilibetlondon"], "reviewed": "2026-09-07"
+    "links": [{"label": "Visit Dolphin Foods", "url": "https://www.dolphinpk.com"}], "related": ["gemanstore", "wraptopia", "lilibetlondon"], "reviewed": "2026-09-07"
   },
   {
     "slug": "lilibetlondon", "name": "Lilibet London", "category": "Commerce", "eyebrow": "Fashion catalogue and atelier", "accent": "#e1d5bf", "image": "lilibet-london.jpg",
@@ -57,7 +67,7 @@
     "features": ["Category-led product browsing and a consistent monochrome identity", "Subtle motion with support for reduced-motion preferences", "Atelier tools for catalogue management and customer enquiries", "Visitor reporting that filters bot traffic"],
     "engineering": "Rails and Hotwire serve the experience with Tailwind styling, PostgreSQL persistence and a Kamal deployment setup. The same application supports the public catalogue and the team's administration tools.",
     "stack": ["Ruby on Rails", "Hotwire", "Tailwind CSS", "PostgreSQL", "Kamal"], "flow": ["Browse collection", "Explore product", "Send enquiry", "Atelier responds"],
-    "links": [{"label": "Visit Lilibet London", "url": "https://lilibetlondon.pk"}], "related": ["dolphinpk", "wraptopia"], "reviewed": "2026-09-07"
+    "links": [{"label": "Visit Lilibet London", "url": "https://lilibetlondon.pk"}], "related": ["dolphinpk", "gemanstore", "wraptopia"], "reviewed": "2026-09-07"
   },
   {
     "slug": "baileys", "name": "Baileys WhatsApp Gateway", "category": "Platforms", "eyebrow": "Shared messaging infrastructure", "accent": "#a9df86", "image": "whatsapp-gateway.jpg",
